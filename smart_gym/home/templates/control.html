@@ -1,0 +1,161 @@
+<html lang="zxx" class="no-js" style="display: block;">
+
+<head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="img/fav.png">
+    <meta charset="UTF-8">
+
+    <title>Smart Gym</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="/static/home/css/linearicons.css">
+    <link rel="stylesheet" href="/static/home/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/home/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/home/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/home/css/jquery-ui.css">
+    <link rel="stylesheet" href="/static/home/css/nice-select.css">
+    <link rel="stylesheet" href="/static/home/css/animate.min.css">
+    <link rel="stylesheet" href="/static/home/css/owl.carousel.css">
+    <link rel="stylesheet" href="/static/home/css/main.css">
+
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/util.js"></script>
+
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/util.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/common.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/38/9/util.js"></script>
+
+    <style>
+        #form {
+            text-align: center;
+            margin: auto;
+            width: 93.5%;
+            margin-top: 5%;
+            box-shadow: 0px 20px 20px 0px rgba(132, 144, 255, 0.3);
+        }
+        .font-size {
+            font-size: 12px;
+        }
+
+    </style>
+
+</head>
+
+<body style="display: block; overflow: hidden;">
+    <button type="button" id="mobile-nav-toggle" style="display: none;"><i class="lnr lnr-menu"></i></button>
+    <header id="header" class="">
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="control.html"><img src="img/logo.png" alt="" title=""></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner-area">
+        <div class="container">
+            <div class="row fullscreen align-items-center justify-content-between">
+                <div class="banner-left" style="margin-left: auto;margin-right: auto;margin-top: auto;height: 63%;">
+                    <h6>Set up a</h6>
+                    <h1>Smart Gym</h1>
+                    <form style="align-content: center; text-align: center;" method="post">
+                        {% csrf_token %}
+
+                        <button type="button" id="addnew" name="add" class="primary-btn text-uppercase font-size" style="width: 160.44px;">add new user</button>
+                        <button type="button" onclick="listUsers()" name="list" class="primary-btn text-uppercase font-size" style="background: transparent; color: #8490ff;">current users</button>
+
+                        <div id="form" style="display: none;">
+
+                            <div class="default-select" id="default-select">
+                                <select style="display: none;">
+                                    <option value="1">Profession</option>
+                                    <option value="1">Student</option>
+                                    <option value="1">Teacher</option>
+                                </select>
+                                <div class="nice-select" style="width: 100%" tabindex="0"><span id="profession" class="current">Profession</span>
+                                    <ul class="list" style="box-shadow: 0px 20px 20px 0px rgba(132, 144, 255, 0.3);">
+                                        <li data-value="1" class="option">Student</li>
+                                        <li data-value="1" class="option">Teacher</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="single-footer-widget input-group">
+                                <input type="text" class="form-control" id="username" style="background-color: white; color: #6c757d;" name="name" placeholder="Name of new user " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name of new user '" required="">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="submitadd" onclick="addsubmit()">
+                                        <span class="lnr lnr-arrow-right"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/static/home/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="/static/home/js/popper.min.js"></script>
+    <script src="/static/home/js/vendor/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="/static/home/js/easing.min.js"></script>
+    <script src="/static/home/js/hoverIntent.js"></script>
+    <script src="/static/home/js/superfish.min.js"></script>
+    <script src="/static/home/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/static/home/js/jquery.magnific-popup.min.js"></script>
+    <script src="/static/home/js/jquery.tabs.min.js"></script>
+    <script src="/static/home/js/jquery.nice-select.min.js"></script>
+    <script src="/static/home/js/isotope.pkgd.min.js"></script>
+    <script src="/static/home/js/waypoints.min.js"></script>
+    <script src="/static/home/js/jquery.counterup.min.js"></script>
+    <script src="/static/home/js/simple-skillbar.js"></script>
+    <script src="/static/home/js/owl.carousel.min.js"></script>
+    <script src="/static/home/js/mail-script.js"></script>
+    <script src="/static/home/js/main.js"></script>
+
+    <script>
+        $('#addnew').click(function() {
+            if ($(this).text() === "add new user") {
+                $(this).text('X');
+                $('#form').css({
+                    "display": "block"
+                });
+            } else {
+                $(this).text('add new user');
+                $('#form').css({
+                    "display": "none"
+                });
+            }
+
+        });
+
+        function addsubmit() {
+            let name = $("#username").val();
+            let profession = $('#profession').text();
+
+            window.location.href = "/add/" + profession + "/" + name;
+        }
+
+
+        function listUsers() {
+            window.location.href = "/list";
+        }
+
+    </script>
+
+</body>
+
+</html>
